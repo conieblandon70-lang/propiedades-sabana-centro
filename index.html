@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades Sabana Centro | Real Estate Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #A67C52;
+            --secondary: #C8A882;
+            --accent: #8B6F47;
+            --dark: #5C4A3A;
+            --light: #F5EFE7;
+            --beige: #E8DCC4;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(92, 74, 58, 0.7), rgba(166, 124, 82, 0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23C8A882" width="1200" height="600"/><path fill="%23A67C52" opacity="0.3" d="M0 300L50 283.3C100 266.7 200 233.3 300 233.3C400 233.3 500 266.7 600 283.3C700 300 800 300 900 283.3C1000 266.7 1100 233.3 1150 216.7L1200 200V600H1150C1100 600 1000 600 900 600C800 600 700 600 600 600C500 600 400 600 300 600C200 600 100 600 50 600H0V300Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--beige);
+        }
+
+        .cta-button {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .mission-box {
+            background: var(--beige);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .values {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+
+        .value-item {
+            text-align: center;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-top-color: var(--secondary);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .coverage {
+            background: var(--light);
+        }
+
+        .coverage-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .coverage-item {
+            background: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            border: 2px solid var(--secondary);
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s;
+        }
+
+        .coverage-item:hover {
+            background: var(--secondary);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .property-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .property-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--beige), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+        }
+
+        .property-info {
+            padding: 1.5rem;
+        }
+
+        .property-info h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .property-price {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .contact {
+            background: var(--light);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            width: 40px;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--beige);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary);
+            transform: scale(1.2);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 999;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .values {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">PROPIEDADES SABANA CENTRO</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#propiedades">Propiedades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Real Estate Solutions</h1>
+            <p>Soluciones Inmobiliarias Integrales en la Sabana Centro</p>
+            <a href="#contacto" class="cta-button">Contáctanos Ahora</a>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <h2 class="section-title">Sobre Nosotros</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">¿Quiénes Somos?</h3>
+                <p style="margin-bottom: 1rem;">
+                    Firma especializada en el mercado inmobiliario de la Sabana Centro. Ofrecemos servicios profesionales de comercialización, asesoría estratégica y gestión de propiedades residenciales y comerciales.
+                </p>
+                <p>
+                    Con un profundo conocimiento del mercado local y un compromiso inquebrantable con la excelencia, conectamos a nuestros clientes con las mejores oportunidades inmobiliarias.
+                </p>
+            </div>
+            <div class="mission-box">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">🎯 Nuestra Misión</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                    Conectar oportunidades con resultados tangibles
+                </p>
+                <div class="values">
+                    <div class="value-item">
+                        <i class="fas fa-star" style="display: block; margin-bottom: 0.5rem;"></i>
+                        Experiencia
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-handshake" style="display: block; margin-bottom: 0.5rem;"></i>
+                        Confianza
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-chart-line" style="display: block; margin-bottom: 0.5rem;"></i>
+                        Resultados
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" style="background: var(--light);">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-home"></i></div>
+                <h3>Venta de Propiedades</h3>
+                <p>Comercialización de propiedades residenciales y comerciales con estrategias efectivas de mercadeo.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-key"></i></div>
+                <h3>Arriendo de Inmuebles</h3>
+                <p>Gestión integral de arrendamientos con procesos transparentes y seguros para propietarios e inquilinos.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-building"></i></div>
+                <h3>Administración</h3>
+                <p>Administración profesional de propiedades con seguimiento continuo y reportes detallados.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
+                <h3>Asesoría en Inversión</h3>
+                <p>Consultoría especializada para maximizar el retorno de su inversión inmobiliaria.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-calculator"></i></div>
+                <h3>Avalúos y Estudios</h3>
+                <p>Valoración profesional y análisis de mercado para toma de decisiones informadas.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
+                <h3>Acompañamiento Legal</h3>
+                <p>Asesoría legal y financiera completa en todos sus procesos inmobiliarios.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cobertura" class="coverage">
+        <h2 class="section-title">Nuestra Cobertura</h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: var(--primary);">
+            📍 Presencia en toda la Sabana Centro
+        </p>
+        <div class="coverage-list">
+            <div class="coverage-item">Chía</div>
+            <div class="coverage-item">Cajicá</div>
+            <div class="coverage-item">Cota</div>
+            <div class="coverage-item">Sopó</div>
+            <div class="coverage-item">Zipaquirá</div>
+            <div class="coverage-item">Municipios Aledaños</div>
+        </div>
+    </section>
+
+    <section id="propiedades">
+        <h2 class="section-title">Propiedades Destacadas</h2>
+        <div class="properties-grid">
+            <div class="property-card">
+                <div class="property-image">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="property-info">
+                    <h3>Casa Campestre - Chía</h3>
+                    <p>Hermosa casa con amplio jardín y acabados de lujo</p>
+                    <div class="property-price">Consultar Precio</div>
+                    <a href="#contacto" class="cta-button" style="font-size: 0.9rem; padding: 0.7rem 1.5rem;">Más Información</a>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-image">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="property-info">
+                    <h3>Apartamento - Cajicá</h3>
+                    <p>Moderno apartamento en conjunto cerrado con amenidades</p>
+                    <div class="property-price">Consultar Precio</div>
+                    <a href="#contacto" class="cta-button" style="font-size: 0.9rem; padding: 0.7rem 1.5rem;">Más Información</a>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-image">
+                    <i class="fas fa-store"></i>
+                </div>
+                <div class="property-info">
+                    <h3>Local Comercial - Cota</h3>
+                    <p>Excelente ubicación para tu negocio en zona comercial</p>
+                    <div class="property-price">Consultar Precio</div>
+                    <a href="#contacto" class="cta-button" style="font-size: 0.9rem; padding: 0.7rem 1.5rem;">Más Información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <h2 class="section-title">Contáctanos</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3 style="color: var(--primary); margin-bottom: 2rem;">Información de Contacto</h3>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Teléfono</strong><br>
+                        <a href="tel:3232536796" style="color: var(--dark); text-decoration: none;">323 253 6796</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:info@propiedadesabanacentro.com.co" style="color: var(--dark); text-decoration: none;">info@propiedadesabanacentro.com.co</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <strong>WhatsApp</strong><br>
+                        <a href="https://wa.me/573232536796" style="color: var(--dark); text-decoration: none;">323 253 6796</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <div>
+                        <strong>Instagram</strong><br>
+                        <a href="https://instagram.com/inmobiliariasabanacentro" target="_blank" style="color: var(--dark); text-decoration: none;">@inmobiliariasabanacentro</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3 style="color: var(--primary); margin-bottom: 2rem;">Envíanos un Mensaje</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" required placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="tel" required placeholder="Tu teléfono">
+                    </div>
+                    <div class="form-group">
+                        <label>Mensaje</label>
+                        <textarea required placeholder="¿En qué podemos ayudarte?"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3 style="margin-bottom: 1rem;">PROPIEDADES SABANA CENTRO</h3>
+        <p style="margin-bottom: 1rem;">Real Estate Solutions | Soluciones Inmobiliarias Integrales</p>
+        <div class="social-links">
+            <a href="https://instagram.com/inmobiliariasabanacentro" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/573232536796" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:info@propiedadesabanacentro.com.co"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p style="font-size: 0.9rem; opacity: 0.8;">&copy; 2025 Propiedades Sabana Centro. Todos los derechos reservados.</p>
+        <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0.5rem;">Experiencia | Confianza | Resultados</p>
+    </footer>
+
+    <a href="https://wa.me/573232536796" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
