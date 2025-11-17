@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades Sabana Centro | Inmobiliaria en Cajicá y Chía</title>
+    <meta name="description" content="Especialistas en venta y arriendo de propiedades en Cajicá y Chía. Empresa registrada con avalúos gratuitos y asesoría profesional.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --dark: #1a1a2e;
+            --light: #f8f9ff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAVEGACIÓN */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            background: 
+                linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.85)),
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px),
+                linear-gradient(180deg, #1a1a2e 0%, #667eea 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(240, 147, 251, 0.3) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 0 30px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 3px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* SECCIÓN */
+        section {
+            padding: 100px 30px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 20px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* SERVICIOS */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .servicio-card {
+            background: white;
+            padding: 45px 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .servicio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .servicio-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+        }
+
+        .servicio-icon {
+            font-size: 56px;
+            margin-bottom: 25px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .servicio-card h3 {
+            font-size: 24px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .servicio-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* PROPIEDADES */
+        .propiedades {
+            background: var(--light);
+        }
+
+        .propiedades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .propiedad-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .propiedad-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .propiedad-img-1 {
+            height: 280px;
+            background: 
+                linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.5)),
+                repeating-linear-gradient(90deg, #f5f5f5 0px, #f5f5f5 20px, #e0e0e0 20px, #e0e0e0 40px),
+                repeating-linear-gradient(0deg, #f5f5f5 0px, #f5f5f5 20px, #e0e0e0 20px, #e0e0e0 40px),
+                linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .propiedad-img-1::before {
+            content: '';
+            position: absolute;
+            width: 40%;
+            height: 60%;
+            top: 20%;
+            left: 10%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+            border-radius: 10px;
+            box-shadow: inset 0 0 20px rgba(255,255,255,0.3);
+        }
+
+        .propiedad-img-1::after {
+            content: '🏢';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            opacity: 0.4;
+        }
+
+        .propiedad-img-2 {
+            height: 280px;
+            background: 
+                linear-gradient(135deg, rgba(17, 153, 142, 0.5), rgba(56, 239, 125, 0.6)),
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px),
+                linear-gradient(180deg, #11998e 0%, #38ef7d 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .propiedad-img-2::before {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 40%;
+            top: 30%;
+            left: 25%;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.6), rgba(101, 67, 33, 0.8));
+            clip-path: polygon(50% 0%, 100% 40%, 100% 100%, 0% 100%, 0% 40%);
+        }
+
+        .propiedad-img-2::after {
+            content: '🏡';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            opacity: 0.5;
+        }
+
+        .propiedad-img-3 {
+            height: 280px;
+            background: 
+                linear-gradient(135deg, rgba(240, 147, 251, 0.5), rgba(245, 87, 108, 0.6)),
+                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.3) 0%, transparent 50%),
+                linear-gradient(180deg, #f093fb 0%, #f5576c 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .propiedad-img-3::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 70%;
+            top: 15%;
+            left: 20%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 15px;
+            box-shadow: inset 0 0 30px rgba(255,255,255,0.4);
+        }
+
+        .propiedad-img-3::after {
+            content: '🌆';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            opacity: 0.5;
+        }
+
+        .propiedad-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 14px;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .propiedad-info {
+            padding: 30px;
+        }
+
+        .propiedad-info h3 {
+            font-size: 22px;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .propiedad-location {
+            color: #666;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .propiedad-detalles {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .propiedad-precio {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .propiedad-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .propiedad-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        /* POR QUÉ ELEGIRNOS */
+        .por-que {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+        }
+
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .beneficio {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .beneficio::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .beneficio:hover::before {
+            opacity: 0.05;
+        }
+
+        .beneficio:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .beneficio > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .beneficio-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .beneficio h3 {
+            font-size: 22px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .beneficio p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* TESTIMONIOS */
+        .testimonios {
+            background: var(--dark);
+            color: white;
+        }
+
+        .testimonios .section-title h2 {
+            background: linear-gradient(135deg, #f093fb, #38ef7d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .testimonios .section-title p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .testimonio {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonio:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-5px);
+        }
+
+        .testimonio-texto {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonio-autor {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonio-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .testimonio-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .testimonio-info p {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* CONTACTO */
+        .contacto {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .contacto .section-title h2 {
+            color: white;
+            background: none;
+            -webkit-text-fill-color: white;
+        }
+
+        .contacto .section-title p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .contacto-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contacto-item {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 35px 25px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .contacto-item:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-5px);
+        }
+
+        .contacto-item-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .contacto-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .contacto-item p {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0a0a1a;
+            color: white;
+            padding: 60px 30px 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* WHATSAPP FLOTANTE */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse-whatsapp 2s infinite;
+            text-decoration: none;
+        }
+
+        @keyframes pulse-whatsapp {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 15px 50px rgba(37, 211, 102, 0.6);
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title h2 {
+                font-size: 36px;
+            }
+
+            .servicios-grid,
+            .propiedades-grid,
+            .beneficios-grid,
+            .testimonios-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVEGACIÓN -->
+    <nav id="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span>🏢</span>
+                <span>Propiedades Sabana Centro</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#propiedades">Propiedades</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Tu Hogar Ideal en Cajicá y Chía</h1>
+            <p>Especialistas en conectar personas con las mejores propiedades de la Sabana Centro</p>
+            <div class="cta-buttons">
+                <a href="#propiedades" class="btn btn-primary">
+                    <span>Ver Propiedades</span>
+                    <span>→</span>
+                </a>
+                <a href="https://wa.me/573232536796?text=Hola,%20me%20interesa%20un%20avalúo%20gratuito" class="btn btn-secondary" target="_blank">
+                    <span>Avalúo Gratuito</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Soluciones integrales para todas tus necesidades inmobiliarias</p>
+            </div>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">🏠</div>
+                    <h3>Venta de Propiedades</h3>
+                    <p>Avalúo profesional gratuito, fotografía de alta calidad, publicación masiva y acompañamiento legal completo. Sin costos iniciales.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">🔑</div>
+                    <h3>Arriendo Seguro</h3>
+                    <p>Selección rigurosa de arrendatarios, contratos legales, administración opcional y gestión transparente de pagos.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">🔍</div>
+                    <h3>Asesoría Compradores</h3>
+                    <p>Búsqueda personalizada, análisis de mercado, visitas guiadas, verificación legal y negociación experta a tu favor.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">💼</div>
+                    <h3>Inversión Inmobiliaria</h3>
+                    <p>Análisis de rentabilidad, proyectos sobre plano, portafolio de inversiones y asesoría financiera especializada.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">📊</div>
+                    <h3>Avalúos Comerciales</h3>
+                    <p>Valoración profesional con análisis detallado del mercado local para toma de decisiones informadas.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">⚖️</div>
+                    <h3>Asesoría Legal</h3>
+                    <p>Acompañamiento jurídico completo en todos tus procesos inmobiliarios, desde promesa hasta escrituras.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPIEDADES DESTACADAS -->
+    <section class="propiedades" id="propiedades">
+        <div class="container">
+            <div class="section-title">
+                <h2>Propiedades Destacadas</h2>
+                <p>Descubre las mejores oportunidades en Cajicá y Chía</p>
+            </div>
+            <div class="propiedades-grid">
+                <div class="propiedad-card">
+                    <div class="propiedad-img-1">
+                        <div class="propiedad-badge">SE VENDE</div>
+                    </div>
+                    <div class="propiedad-info">
+                        <h3>Apartamento Moderno en Cajicá</h3>
+                        <p class="propiedad-location">📍 Centro de Cajicá</p>
+                        <div class="propiedad-detalles">
+                            <span>🛏️ 3 hab</span>
+                            <span>🚿 2 baños</span>
+                            <span>🚗 1 parq</span>
+                            <span>📏 72m²</span>
+                        </div>
+                        <div class="propiedad-precio">$320.000.000</div>
+                        <button class="propiedad-btn">Consultar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <div class="propiedad-card">
+                    <div class="propiedad-img-2">
+                        <div class="propiedad-badge" style="color: #11998e;">SE ARRIENDA</div>
+                    </div>
+                    <div class="propiedad-info">
+                        <h3>Casa Campestre en Chía</h3>
+                        <p class="propiedad-location">📍 Yerbabuena, Chía</p>
+                        <div class="propiedad-detalles">
+                            <span>🛏️ 4 hab</span>
+                            <span>🚿 3 baños</span>
+                            <span>🚗 2 parq</span>
+                            <span>📏 180m²</span>
+                        </div>
+                        <div class="propiedad-precio">$3.500.000/mes</div>
+                        <button class="propiedad-btn">Consultar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <div class="propiedad-card">
+                    <div class="propiedad-img-3">
+                        <div class="propiedad-badge" style="color: #f5576c;">NUEVO</div>
+                    </div>
+                    <div class="propiedad-info">
+                        <h3>Apartamento con Vista en Chía</h3>
+                        <p class="propiedad-location">📍 Centro Chía</p>
+                        <div class="propiedad-detalles">
+                            <span>🛏️ 2 hab</span>
+                            <span>🚿 2 baños</span>
+                            <span>🚗 1 parq</span>
+                            <span>📏 65m²</span>
+                        </div>
+                        <div class="propiedad-precio">$280.000.000</div>
+                        <button class="propiedad-btn">Consultar por WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POR QUÉ ELEGIRNOS -->
+    <section class="por-que" id="nosotros">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Por Qué Elegirnos?</h2>
+                <p>Somos tu mejor decisión inmobiliaria en la Sabana Centro</p>
+            </div>
+            <div class="beneficios-grid">
+                <div class="beneficio">
+                    <div class="beneficio-icon">🎯</div>
+                    <h3>Conocimiento Local</h3>
+                    <p>Expertos en Cajicá y Chía. Conocemos cada sector y el precio justo del mercado.</p>
+                </div>
+                <div class="beneficio">
+                    <div class="beneficio-icon">💰</div>
+                    <h3>Sin Costos Iniciales</h3>
+                    <p>Solo pagas cuando vendemos. Avalúo, fotos y publicidad incluidos.</p>
+                </div>
+                <div class="beneficio">
+                    <div class="beneficio-icon">📸</div>
+                    <h3>Marketing Premium</h3>
+                    <p>Fotografía profesional, tours virtuales y publicación en todos los portales.</p>
+                </div>
+                <div class="beneficio">
+                    <div class="beneficio-icon">⚖️</div>
+                    <h3>Asesoría Jurídica</h3>
+                    <p>Acompañamiento legal completo para transacciones seguras.</p>
+                </div>
+                <div class="beneficio">
+                    <div class="beneficio-icon">🤝</div>
+                    <h3>Red de Compradores</h3>
+                    <p>Base amplia de clientes activamente buscando propiedades.</p>
+                </div>
+                <div class="beneficio">
+                    <div class="beneficio-icon">✅</div>
+                    <h3>Empresa Registrada</h3>
+                    <p>Empresa formal registrada ante Cámara de Comercio. NIT: 52015317-4</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="testimonios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lo Que Dicen Nuestros Clientes</h2>
+                <p>Historias reales de personas satisfechas</p>
+            </div>
+            <div class="testimonios-grid">
+                <div class="testimonio">
+                    <p class="testimonio-texto">"Excelente servicio. Vendieron mi apartamento en solo 5 semanas. Muy profesionales y atentos en todo el proceso."</p>
+                    <div class="testimonio-autor">
+                        <div class="testimonio-avatar">👨</div>
+                        <div class="testimonio-info">
+                            <h4>Carlos Martínez</h4>
+                            <p>Cliente Cajicá</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonio">
+                    <p class="testimonio-texto">"Me ayudaron a encontrar el apartamento perfecto para mi familia. Muy pacientes y conocedores del mercado."</p>
+                    <div class="testimonio-autor">
+                        <div class="testimonio-avatar">👩</div>
+                        <div class="testimonio-info">
+                            <h4>Ana García</h4>
+                            <p>Cliente Chía</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonio">
+                    <p class="testimonio-texto">"Empresa seria y confiable. El avalúo gratuito fue muy detallado y me ayudó a poner el precio correcto."</p>
+                    <div class="testimonio-autor">
+                        <div class="testimonio-avatar">👨</div>
+                        <div class="testimonio-info">
+                            <h4>Luis Rodríguez</h4>
+                            <p>Cliente Cajicá</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contáctanos</h2>
+                <p>Estamos listos para ayudarte con tu proyecto inmobiliario</p>
+            </div>
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <div class="contacto-item-icon">📱</div>
+                    <h3>WhatsApp</h3>
+                    <p>323 253 6796</p>
+                </div>
+                <div class="contacto-item">
+                    <div class="contacto-item-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>info@propiedadesabanacentro.com.co</p>
+                </div>
+                <div class="contacto-item">
+                    <div class="contacto-item-icon">📍</div>
+                    <h3>Ubicación</h3>
+                    <p>Cajicá y Chía, Cundinamarca</p>
+                </div>
+            </div>
+            <div class="cta-buttons" style="margin-top: 50px;">
+                <a href="https://wa.me/573232536796?text=Hola,%20me%20interesa%20información%20sobre%20propiedades" class="btn btn-primary" target="_blank">
+                    <span>WhatsApp Directo</span>
+                    <span>💬</span>
+                </a>
+                <a href="mailto:info@propiedadesabanacentro.com.co" class="btn btn-secondary">
+                    <span>Enviar Email</span>
+                    <span>📧</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Propiedades Sabana Centro</h3>
+                <p>Tu aliado de confianza en bienes raíces. Especializados en Cajicá y Chía.</p>
+                <p style="margin-top: 20px;">✅ Empresa Registrada</p>
+                <p>NIT: 52015317-4</p>
+                <p style="margin-top: 15px;">📱 Instagram: @inmobiliariasabanacentro</p>
+            </div>
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <a href="#servicios">Venta de Propiedades</a>
+                <a href="#servicios">Arriendo</a>
+                <a href="#servicios">Asesoría Compradores</a>
+                <a href="#servicios">Inversión Inmobiliaria</a>
+                <a href="#servicios">Avalúos</a>
+            </div>
+            <div class="footer-section">
+                <h3>Zonas de Cobertura</h3>
+                <a href="#propiedades">Cajicá Centro</a>
+                <a href="#propiedades">Chía Centro</a>
+                <a href="#propiedades">Yerbabuena</a>
+                <a href="#propiedades">La Estación</a>
+                <a href="#propiedades">Puente Sopó</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📱 WhatsApp: 323 253 6796</p>
+                <p>📧 info@propiedadesabanacentro.com.co</p>
+                <p>🌐 propiedadesabanacentro.com.co</p>
+                <p>⏰ Lun-Vie: 8am-6pm</p>
+                <p>⏰ Sábados: 9am-12pm</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Propiedades Sabana Centro. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px;">Empresa registrada ante Cámara de Comercio • NIT: 52015317-4</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/573232536796?text=Hola,%20me%20interesa%20información%20sobre%20propiedades" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        💬
+    </a>
+
+    <script>
+        // Navegación con scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'white';
+                nav.style.boxShadow = '0 2px 30px rgba(0,0,0,0.15)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Smooth scroll para enlaces
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animación de entrada para elementos
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos con animación
+        document.querySelectorAll('.servicio-card, .propiedad-card, .beneficio, .testimonio').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Click en botones de propiedades
+        document.querySelectorAll('.propiedad-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const whatsappUrl = 'https://wa.me/573232536796?text=Hola,%20me%20interesa%20esta%20propiedad';
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
+                            
